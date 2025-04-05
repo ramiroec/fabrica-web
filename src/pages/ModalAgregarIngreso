@@ -1,0 +1,125 @@
+import React, { useState } from 'react';
+import Modal from 'react-modal';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+Modal.setAppElement('#root'); // Asegúrate de que esto apunte a tu elemento root
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    bottom: 'auto',
+    height: '80vh',
+    maxHeight: '90vh',
+    overflow: 'auto',
+    paddingBottom: '40px',
+    width: '90%',
+    maxWidth: '800px',
+  },
+};
+
+const responsiveStyles = `
+  @media (max-width: 600px) {
+    .ReactModal__Content {
+      width: 100% !important;
+      height: 90% !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
+    }
+
+    .form-group {
+      width: 100% !important;
+    }
+
+    .d-flex {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .btn {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .btn-danger {
+      margin-top: 0;
+    }
+  }
+`;
+
+const ModalAgregarIngreso = ({ isOpen, onRequestClose }) => {
+  const [data, setData] = useState({
+    fecha: "",
+    descripcion: "",
+    monto: "",
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Aquí deberías agregar la lógica para enviar los datos al backend
+    // Por ejemplo, usando axios o fetch
+    console.log(data);
+    toast.success("Guardado con éxito!");
+    setTimeout(() => {
+      onRequestClose();
+    }, 3000);
+  };
+
+  return (
+    <>
+      <style>{responsiveStyles}</style>
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={onRequestClose}
+        style={customStyles}
+        contentLabel="Agregar Ingreso"
+      >
+        <div>
+          <h3>Agregar Ingreso</h3>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label>Fecha</label>
+              <input
+                type="date"
+                className="form-control"
+                required
+                value={data.fecha}
+                onChange={(e) => setData({ ...data, fecha: e.target.value })}
+              />
+            </div>
+            <div className="form-group">
+              <label>Descripción</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Descripción"
+                required
+                value={data.descripcion}
+                onChange={(e) => setData({ ...data, descripcion: e.target.value })}
+              />
+            </div>
+            <div className="form-group">
+              <label>Monto (Gs)</label>
+              <input
+                type="number"
+                className="form-control"
+                placeholder="Monto"
+                required
+                value={data.monto}
+                onChange={(e) => setData({ ...data, monto: e.target.value })}
+              />
+            </div>
+            <button type="submit" className="btn btn-primary">
+              Guardar
+            </button>
+          </form>
+        </div>
+      </Modal>
+    </>
+  );
+};
+
+export default ModalAgregarIngreso;

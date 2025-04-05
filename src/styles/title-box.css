@@ -1,0 +1,17 @@
+/* title-box.css */
+/* Estilo para título */
+.title-box {
+    background-color: #37c1d3; /* Color de fondo suave */
+    color: #fdfcfc; /* Color del texto */
+    padding: 8px; /* Espaciado interno */
+    border-left: 6px solid #9fa0a1; /* Barra lateral de color */
+    font-size: 18px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    text-align: left; /* Alinear texto a la izquierda */
+    margin-bottom: 30px; /* Espaciado inferior */
+    letter-spacing: 0px; /* Espaciado entre letras */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    line-height: 1.4; /* Altura de línea */
+    width: 100%; /* Ajusta la longitud del cuadro */
+    
+}

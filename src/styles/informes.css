@@ -1,0 +1,93 @@
+.informes-container {
+    display: flex; /* Utiliza Flexbox para alinear los elementos hijos en una fila. */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea si no caben en una sola fila. */
+    gap: 20px; /* Espacio entre cada elemento hijo. */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+
+  }
+  
+  .informe-card {
+    width: 200px; /* Ancho fijo para cada tarjeta. */
+    height: 300px; /* Alto fijo para cada tarjeta. */
+    display: flex; /* Utiliza Flexbox para alinear el contenido interno. */
+    flex-direction: column; /* Alinea los elementos hijos (icono y texto) en una columna. */
+    align-items: center; /* Centra horizontalmente los elementos hijos. */
+    justify-content: center; /* Centra verticalmente los elementos hijos. */
+    text-align: center; /* Centra el texto dentro de la tarjeta. */
+    color: white; /* Color del texto. */
+    font-size: 18px; /* Tamaño del texto. */
+    font-weight: bold; /* Hace que el texto sea negrita. */
+    cursor: pointer; /* Cambia el cursor al pasar por encima, indicando que es clickeable. */
+    position: relative; /* Permite la colocación de elementos absolutamente posicionados dentro de la tarjeta. */
+    padding: 20px; /* Espacio interno alrededor del contenido. */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra alrededor de la tarjeta para darle un efecto de elevación. */
+    transition: transform 0.2s; /* Añade una transición suave cuando la tarjeta cambia de tamaño (al pasar el ratón por encima). */
+  }
+  
+  .informe-card:hover {
+    transform: scale(1.05); /* Agranda la tarjeta ligeramente cuando se pasa el ratón por encima. */
+  }
+  
+  .informe-card i {
+    font-size: 50px; /* Tamaño del icono. */
+    margin-bottom: 15px; /* Espacio debajo del icono. */
+  }
+  
+  .informe-card::before {
+    content: ''; /* Inserta un elemento vacío antes del contenido de la tarjeta. */
+    position: absolute; /* Posiciona el elemento de manera absoluta dentro de la tarjeta. */
+    top: 0; /* Alinea el elemento al borde superior de la tarjeta. */
+    right: 0; /* Alinea el elemento al borde derecho de la tarjeta. */
+    width: 50px; /* Ancho del elemento. */
+    height: 50px; /* Alto del elemento. */
+    background-color: white; /* Color de fondo del elemento. */
+    clip-path: polygon(100% 0, 0 0, 100% 100%); /* Crea una forma triangular que simula una página doblada en la esquina superior derecha. */
+
+  }
+
+  .orange {
+    background-color: #FF9F40; /* Color de fondo naranja */
+  }
+  
+  .green {
+    background-color: #66bb6a; /* Color de fondo verde */
+  }
+  
+  .pink {
+    background-color:  #FF6384; /* Color de fondo rosa */
+  }
+  
+  .salmon {
+    background-color: #FFA07A; /* Color de fondo salmon claro */
+  }
+  
+  .blue {
+    background-color: #1e88e5; /* Color de fondo azul */
+  }
+  
+  .purple {
+    background-color: #9966FF; /* Color de fondo púrpura */
+  }
+  
+  .teal {
+    background-color: #26a69a; /* Color de fondo verde azulado */
+  }
+
+   .indigo {
+    background-color: #da5c46; /* Color de fondo naranja rojizo */
+  }
+
+  /* Ajustes responsivos para pantallas más pequeñas */
+@media (max-width: 1024px) {
+  .informes-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .informes-container {
+    grid-template-columns: 1fr;
+  }
+}

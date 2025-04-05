@@ -1,0 +1,102 @@
+.auditoria-wrapper {
+  text-align: center; /* Centrar el contenido dentro del contenedor */
+  margin: 20px 0; /* Espacio arriba y abajo */
+}
+
+.auditoria-title {
+  margin-bottom: 20px; /* Espacio entre el título y el contenedor */
+  font-size: 2em; /* Ajusta el tamaño del título según sea necesario */
+  font-weight: bold; /* Estilo del título */
+}
+
+
+
+.auditoria-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Cuatro columnas para pantallas grandes */
+  justify-content: center;
+  margin: 20px;
+}
+
+.auditoria-card {
+  width: 200px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white; /* Color del texto en blanco */
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efecto de profundidad */
+  transition: transform 0.2s, background-color 0.2s;
+  border-radius: 10px; /* Bordes redondeados */
+  position: relative;
+}
+
+/* Efecto hover */
+.auditoria-card:hover {
+  transform: scale(1.05); /* Efecto de agrandado al hacer hover */
+}
+
+/* Estilos para los iconos dentro de las tarjetas */
+.auditoria-card i {
+  font-size: 50px; /* Tamaño del icono */
+  margin-bottom: 15px; /* Espacio debajo del icono */
+}
+
+/* Colores específicos para cada tarjeta */
+.pacientes {
+  background-color: #FF6F61; /* Color de fondo coral */
+}
+
+.estimulacion-temprana {
+  background-color: #FFCC33; /* Color de fondo amarillo */
+}
+
+.fonoaudiologia {
+  background-color: #66BB6A; /* Color de fondo verde */
+}
+
+.general {
+  background-color: #42A5F5; /* Color de fondo azul */
+}
+
+.psicologia-clinica {
+  background-color: #AB47BC; /* Color de fondo púrpura */
+}
+
+.psicologia-educacional {
+  background-color: #FF7043; /* Color de fondo naranja */
+}
+
+/* Triángulo decorativo en la esquina superior derecha */
+.auditoria-card::before {
+  content: ''; /* Elemento vacío */
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-color: white; /* Color de fondo blanco */
+  clip-path: polygon(100% 0, 0 0, 100% 100%); /* Forma triangular */
+}
+
+/* Ajustes responsivos para pantallas más pequeñas */
+@media (max-width: 1024px) {
+.auditoria-container {
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas para pantallas medianas */
+}
+}
+
+@media (max-width: 768px) {
+.auditoria-container {
+  grid-template-columns: 1fr; /* Una columna para pantallas pequeñas */
+}
+}

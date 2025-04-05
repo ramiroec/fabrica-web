@@ -1,0 +1,9 @@
+export interface PlanIntervencionInicial {
+    id: number;
+    descripcion_plan: string;
+    terapeuta: number;
+    fecha: Date;
+  
+
+}
+

@@ -1,0 +1,4 @@
+.textarea-autosize {
+    overflow: hidden; /* Oculta las barras de desplazamiento */
+    resize: none; /* Deshabilita el redimensionamiento manual */
+}
