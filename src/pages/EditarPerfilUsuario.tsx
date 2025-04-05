@@ -65,8 +65,6 @@ const EditarPerfilUsuario: React.FC<ModalProps> = ({ isOpen, onRequestClose }) =
         numero_documento: "",
         email: "",
         telefono: "",
-        foto: '',
-        publicid: '',
     });
 
     const authentication = useSelector((state: any) => state.auth.authentication);
@@ -91,23 +89,9 @@ const EditarPerfilUsuario: React.FC<ModalProps> = ({ isOpen, onRequestClose }) =
     async function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const formData = new FormData();
-        if (file) {
-            formData.append("foto", file); // Cambia "file" a "foto"
-        }
         try {
             const api = authenticatedApi();
             let newData = { ...data }; // Copia de los datos actuales
-
-            // Si hay un archivo seleccionado, procede con la carga y actualización de la foto
-            if (file) {
-                const responseUpload = await api.post("/usuario/foto", formData);
-                const { url, publicid } = responseUpload.data;
-                newData = { ...newData, foto: url, publicid: publicid };
-                // Actualiza el valor de authentication.profile.foto
-                const updatedProfile = { ...authentication.profile, foto: url };
-                dispatch({ type: "UPDATE_PROFILE", payload: updatedProfile });
-                localStorage.setItem('authentication', JSON.stringify({ ...authentication, profile: updatedProfile }));
-            }
             //console.log(newData)
             //return
             await api.put(`/usuario/perfil/${id}`, newData);
@@ -256,16 +240,6 @@ const EditarPerfilUsuario: React.FC<ModalProps> = ({ isOpen, onRequestClose }) =
                                     setData({ ...data, telefono: e.target.value })
                                 }
                             />
-                        </div>
-                        <div className="form-group col-md-6">
-                                    <label>Foto de Perfil</label>
-                                    <input
-                                        type="file"
-                                        className="form-control"
-                                        id="foto"
-                                        accept="image/*"
-                                        onChange={handleFileChange}
-                                    />
                         </div>
                         <div className="form-group col-md-6">
                         <button type="submit" className="btn btn-info">

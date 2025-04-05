@@ -94,8 +94,8 @@ const MenuSidebar = () => {
           height={37.4}
         />
         <span className="brand-text font-weight-bolder">
-        <span style={{ color: '#2874A6' }}>ISOPAR</span>
-        <span style={{ color: '#1ABC9C' }}> S.R.L</span>
+        <span style={{ color: '#2874A6' }}>FABRICA</span>
+        <span style={{ color: '#1ABC9C' }}> S.A.</span>
         </span>
       </Link>
       <div className="sidebar">
