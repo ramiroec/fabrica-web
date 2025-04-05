@@ -16,10 +16,6 @@ import Blank from '@pages/Blank';
 import SubMenu from '@pages/SubMenu';
 import Profile from '@pages/profile/Profile';
 
-// Importaciones relacionadas con Ordenes.
-import CrearOrden from '@pages/CrearOrden';
-import EditarOrden from '@pages/EditarOrden';
-import ListarOrden from '@pages/ListarOrden';
 
 // Importaciones relacionadas con Perfiles
 import ListarPerfil from '@pages/ListarPerfil';
@@ -33,9 +29,6 @@ import VerDepartamento from '@pages/VerDepartamento';
 import CrearDepartamento from '@pages/CrearDepartamento';
 import EditarDepartamento from '@pages/EditarDepartamento';
 
-// Importaciones relacionadas con Contabilidad
-import CrearContabilidad from '@pages/CrearContabilidad';
-import ListarContabilidad from '@pages/ListarContabilidad';
 
 // Importaciones relacionadas con Empresas
 import EditarEmpresa from '@pages/EditarEmpresa';
@@ -59,7 +52,6 @@ import ProcesoProduccion from './pages/ProcesoProduccion';
 // Importaciones adicionales
 
 import Ayuda from '@pages/Ayuda';
-import Informes from '@pages/Informes';
 import PublicRoute from './routes/PublicRoute';
 import PrivateRoute from './routes/PrivateRoute';
 import { setAuthentication } from './store/reducers/auth';
@@ -129,19 +121,11 @@ const App = () => {
             <Route path="/Ayuda" element={<Ayuda />} />
             <Route path="/ProcesoProduccion" element={<ProcesoProduccion />} />
             <Route path="/blank" element={<Blank />} />
-            <Route path="/CrearContabilidad" element={<CrearContabilidad />} />
-            <Route path="/ListarContabilidad" element={<ListarContabilidad />} />
-            <Route path="/CrearOrden/:id" element={<CrearOrden />} />
-            <Route path="/VerPago" element={<VerPago />} />
-            <Route path="/Informes" element={<Informes />} />
             {/*pagos */}
 
             <Route path="/VerPago/:id" element={<VerPago />} />
             <Route path="/configuracion/empresa/:id" element={<VerEmpresa />} />
             <Route path="/configuracion/empresa/editar/:id" element={<EditarEmpresa />} />
-            <Route path="/ListarOrden/:id" element={<ListarOrden />} />
-            <Route path="/orden_de_servicio/crear/:id" element={<CrearOrden />} />
-            <Route path="/orden_de_servicio/editar/:id/:ordenId" element={<EditarOrden />} />
             <Route path="/perfilusuario" element={<PerfilUsuario />} />
             <Route path="/configuracion/perfil" element={<ListarPerfil />} />
             <Route path="/configuracion/perfil/:id" element={<VerPerfil />} />
