@@ -6,7 +6,7 @@ const ContentHeader = ({ title }: { title: string }) => {
       <div className="container-fluid">
         <div className="row mb-2">
           <div className="col-sm-6">
-            <h1>Sistema de Producción ISOPAR</h1>
+            <h1>Sistema de Producción de una Fábrica</h1>
           </div>
           <div className="col-sm-6">
             <ol className="breadcrumb float-sm-right">

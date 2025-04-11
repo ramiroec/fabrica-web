@@ -89,7 +89,7 @@ const MenuSidebar = () => {
       <Link to="/" className="brand-link">
         <StyledBrandImage
           src="/logo.png"
-          alt="ISOPAR"
+          alt="Fabrica"
           width={29}
           height={37.4}
         />
