@@ -29,7 +29,6 @@ import VerDepartamento from '@pages/VerDepartamento';
 import CrearDepartamento from '@pages/CrearDepartamento';
 import EditarDepartamento from '@pages/EditarDepartamento';
 
-
 // Importaciones relacionadas con Empresas
 import EditarEmpresa from '@pages/EditarEmpresa';
 import VerEmpresa from '@pages/VerEmpresa';
@@ -47,7 +46,6 @@ import CrearProveedor from './pages/CrearProveedor';
 import VerProveedor from './pages/VerProveedor';
 import EditarProveedor from './pages/EditarProveedor';
 
-import VerPago from './pages/VerPago';
 import ProcesoProduccion from './pages/ProcesoProduccion';
 // Importaciones adicionales
 
@@ -116,14 +114,9 @@ const App = () => {
         <Route path="/" element={<PrivateRoute />}>
           <Route path="/" element={<Main />}>
             <Route path="/" element={<Dashboard />} />
-
-
             <Route path="/Ayuda" element={<Ayuda />} />
             <Route path="/ProcesoProduccion" element={<ProcesoProduccion />} />
             <Route path="/blank" element={<Blank />} />
-            {/*pagos */}
-
-            <Route path="/VerPago/:id" element={<VerPago />} />
             <Route path="/configuracion/empresa/:id" element={<VerEmpresa />} />
             <Route path="/configuracion/empresa/editar/:id" element={<EditarEmpresa />} />
             <Route path="/perfilusuario" element={<PerfilUsuario />} />
