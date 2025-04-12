@@ -73,18 +73,12 @@ const VerEmpresa = () => {
   // Función para manejar el envío del formulario de agregar feriado
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    const updatedData = {
-      ...data,
-      dia: e.target.dia.value,
-      mes: e.target.mes.value,
-      descripcion: e.target.descripcion.value,
-    };
     const api = authenticatedApi();
     api
-      .post("/feriado", updatedData)
+      .post("/feriado", data)
       .then((res) => {
         toast.success("Guardado con éxito!");
-        fetchFeriados(); // Actualiza la lista de feriados
+        fetchFeriados();
       })
       .catch((err) => {
         console.log(err);
